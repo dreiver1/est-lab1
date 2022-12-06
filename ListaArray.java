@@ -1,4 +1,9 @@
 public class ListaArray implements EstruturaDeDados{
+    private int contador;
+    public ListaArray(){
+        int[] elementos = new int(1000);
+        contador = 0;
+    }
 
     @Override
     public boolean insert(int chave) {
@@ -44,5 +49,6 @@ public class ListaArray implements EstruturaDeDados{
 
     public static void main(String[] args) {
         ListaArray r = new ListaArray();
+        
     }
 }
