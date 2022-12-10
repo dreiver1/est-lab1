@@ -7,6 +7,7 @@ public class ListaArray implements EstruturaDeDados{
     public ListaArray(){
         elementos = new int[1000];
         contador = 0;
+        System.out.println("rodou");
     }
 
     @Override
@@ -21,22 +22,19 @@ public class ListaArray implements EstruturaDeDados{
 
     @Override
     public boolean delete(int chave) {
-        for (int i = chave; i < contador; i++) {
+        for (int i = chave; i <= contador; i++) {
            elementos[i] = elementos[i+1];
         }
+        contador--;
         return true;
-        
-        // return false;
     }
     
 
     @Override
     public boolean search(int chave) {
-        for (int i = 0; i < elementos.length; i++) {
+        for (int i = 0; i <= contador; i++) {
             if(elementos[i] == chave){
                 return true;
-            }else{
-                return false;
             }
         }
         return false;
@@ -44,30 +42,55 @@ public class ListaArray implements EstruturaDeDados{
 
     @Override
     public int minimum() {
-        // TODO Auto-generated method stub
-        return 0;
+        int aux = elementos[0];
+        for (int i = 0; i <= contador; i++) {
+            if(elementos[i] < aux && elementos[i] != 0){
+                aux = elementos[i];
+            }
+        }
+        return aux;
     }
 
     @Override
     public int maximum() {
-        // TODO Auto-generated method stub
-        return 0;
+        int aux = elementos[0];
+        for (int i = 0; i <= contador; i++) {
+            if(elementos[i] > aux){
+                aux = elementos[i];
+            }
+        }
+        return aux;
     }
 
     @Override
     public int sucessor(int chave) {
-        // TODO Auto-generated method stub
+        for (int i = 0; i < contador; i++) {
+            if(elementos[i] == chave){
+                return elementos[i+1];
+            }
+        }
         return 0;
     }
 
     @Override
     public int prodessor(int chave) {
-        // TODO Auto-generated method stub
+        for (int i = 0; i < contador; i++) {
+            if(elementos[i] == chave){
+                return elementos[i-1];
+            }
+        }
         return 0;
     }
 
     public static void main(String[] args) {
         ListaArray r = new ListaArray();
-        
+        r.insert(50);
+        r.insert(20);
+        r.insert(30);
+        System.out.println(r.search(50));
+        System.out.println(r.maximum()); 
+        System.out.println(r.minimum());
+        System.out.println(r.prodessor(20));
+        System.out.println(r.sucessor(20));
     }
 }
