@@ -6,6 +6,8 @@ class ArrayList(EstruturaDeDados):
         self.counter = 0
 
 
-r = ArrayList()
-r.insert(1)
-print(r.search(1))
+print("teste")
+
+# r = ArrayList()
+# r.insert(1)
+# print(r.search(1))
