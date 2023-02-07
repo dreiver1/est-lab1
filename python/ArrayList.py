@@ -1,4 +1,4 @@
-from EstruturaDeDados import EstruturaDeDados
+from python.EstruturaDeDados import EstruturaDeDados
 
 
 class ArrayList(EstruturaDeDados):
