@@ -1,3 +1,4 @@
+
 public class ListaArray implements EstruturaDeDados{
 
     @Override
